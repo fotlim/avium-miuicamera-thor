@@ -1,0 +1,11 @@
+# 构建产物与 payload 不入库
+payload/
+*.zip
+reports/
+diagnostics/
+*.log
+
+# Windows / 编辑器
+Thumbs.db
+desktop.ini
+.vscode/

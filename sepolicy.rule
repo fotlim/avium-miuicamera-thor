@@ -1,0 +1,27 @@
+# AviumUI 小米相机 —— 应用侧 SELinux 规则
+# 原则：Enforcing 保持开启；只给相机应用域（platform_app）访问相机相关资源的最小权限。
+# 说明：平台类型名以本机实际策略为准；类型不存在时该行不生效但不影响其它行。
+
+# 相机应用使用的 HAL 客户端属性
+typeattribute platform_app vendor_hal_camerapostproc_xiaomi_client
+
+# hwservicemanager / 相机 HAL 的 binder 通信
+allow platform_app hwservicemanager binder { call transfer }
+allow hwservicemanager platform_app binder { call transfer }
+allow platform_app hal_camera_default binder { call transfer }
+allow hal_camera_default platform_app binder { call transfer }
+
+# 小米后处理服务（campostproc）
+allow platform_app vendor_hal_camerapostproc_xiaomi binder { call transfer }
+allow vendor_hal_camerapostproc_xiaomi platform_app binder transfer
+allow platform_app vendor_hal_camerapostproc_xiaomi_hwservice hwservice_manager find
+
+# 相机算法/传感器常见资源
+allow platform_app adsprpcd_file dir { getattr open read search }
+allow platform_app vendor_qdsp_device chr_file { ioctl read }
+allow platform_app vendor_camera_data_file dir { append map getattr open read search ioctl lock write }
+allow platform_app vendor_camera_data_file file { getattr open read }
+allow platform_app app_data_file file execute
+allow platform_app vendor_camera_sensor_prop file { getattr open read map }
+allow platform_app vendor_display_prop file { getattr open read map }
+allow platform_app vendor_panel_info_prop file { getattr open read map }

@@ -1,0 +1,22 @@
+AviumUI Xiaomi Camera (thor) — 发布信息 / Release info
+=======================================================
+
+模块 / module : avium_miuicamera_thor22
+版本 / version: 1.7.7-avium  (versionCode 67)
+构建 / built  : 2026-11-19
+
+包 / package  : avium_miuicamera_thor-1.7.7-avium.zip
+大小 / size   : 121,498,558 B  (115.9 MB)
+SHA-256       : bcdd8d3ac05196f1d87a37b4db5967ae9fef564bbedd909559449d710324bd32
+
+前置 / prerequisite:
+  meta-overlayfs 1.3.1 (versionCode 13100)
+  meta-overlayfs.zip  451,415 B
+  sha256 279d85a6a35724dfcf8aa1137a9630c7e989e154b94543517c539ee70f9b8811
+
+说明 / notes:
+  - 本文件不打包进 zip（避免自身哈希自指），发布时随包一并提供。
+  - 包内 SHA256SUMS 用于校验模块文件本身；设备端 `sha256sum -c SHA256SUMS` 应全部 OK。
+  - 装机后可在 KernelSU 管理器点「操作」运行 action.sh 自检。
+  - 已知问题：慢动作模式（id 0xac）会触发 camera-provider 在 libSNPE.so 内崩溃 → cameraserver 重启；
+    官方签名 APK 在 A16 上无法预览（缺 ZoomMapBridge）。两者需改 APK/二进制，未修。

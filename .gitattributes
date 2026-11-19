@@ -1,0 +1,9 @@
+# shell/模块脚本必须是 LF —— CRLF 会让设备端 sh 报错、sha256sum -c 误报
+*.sh            text eol=lf
+module.prop     text eol=lf
+sepolicy.rule   text eol=lf
+system.prop     text eol=lf
+*.md            text eol=lf
+*.txt           text eol=lf
+*.ps1           text eol=lf
+*.bat           text eol=crlf

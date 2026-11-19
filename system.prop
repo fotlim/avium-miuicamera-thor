@@ -1,0 +1,7 @@
+# AviumUI Xiaomi camera module - system properties
+ro.miui.notch=1
+ro.miui.ui.version.code=816
+ro.miui.ui.version.name=V816
+persist.vendor.camera.privapp.list=com.android.camera
+# defense in depth: never let a missing privapp-allowlist entry block boot
+ro.control_privapp_permissions=log

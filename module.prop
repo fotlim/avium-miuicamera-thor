@@ -1,0 +1,6 @@
+id=avium_miuicamera_thor22
+name=AviumUI Xiaomi Camera (thor)
+version=1.7.7-avium
+versionCode=67
+author=AviumUI (module scripts); camera APK/libraries: Xiaomi + GSQ2004/thor-miuicamera v0.1.7
+description=[AviumUI] Xiaomi camera module for thor / Android 16. Payload = A16-patched MiuiCamera from GSQ2004 thor-miuicamera v0.1.7. Install-time metamodule guard, on-device self-check (integrity/hashes/overlay/fps) and install guide bundled. Known issue: slow-motion crashes camera provider - see STATUS. See CREDITS.md.
